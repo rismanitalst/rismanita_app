@@ -27,10 +27,23 @@ class MyHome extends StatelessWidget {
         title: const Text("Welcome to RismanitaApp"),
         backgroundColor: Colors.blueAccent,
       ),
-      body: const Center(
-        child: Text(
-          "Hello Flutter!",
-          style: TextStyle(fontSize: 20),
+      body: Center(
+        child: Container(
+          width: 200,
+          height: 200,
+          decoration: BoxDecoration(
+            color: Colors.blueAccent,
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: const Center(
+            child: Text(
+              "Container Example",
+              style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white),
+            ),
+          ),
         ),
       ),
     );
