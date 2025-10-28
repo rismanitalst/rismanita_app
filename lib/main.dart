@@ -12,14 +12,27 @@ class RismanitaApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "RismanitaApp",
-      home: MyHome(),
+      home: const MyHome(),
     );
   }
 }
 
 class MyHome extends StatelessWidget {
+  const MyHome({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Welcome to RismanitaApp"),
+        backgroundColor: Colors.blueAccent,
+      ),
+      body: const Center(
+        child: Text(
+          "Hello Flutter!",
+          style: TextStyle(fontSize: 20),
+        ),
+      ),
+    );
   }
 }
