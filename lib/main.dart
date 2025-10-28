@@ -27,78 +27,39 @@ class MyHome extends StatelessWidget {
         title: const Text("Welcome to RismanitaApp"),
         backgroundColor: Colors.blueAccent,
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(20),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            //ini bagian baris
             const Text(
-              "Row Horizontal (→)",
+              "Menampilkan Gambar dengan Image.asset",
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 10),
-            Container(
-              padding: const EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.black26),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  _buildBox("A"),
-                  _buildBox("B"),
-                  _buildBox("C"),
-                ],
-              ),
-            ),
-            const SizedBox(height: 40),
+            const SizedBox(height: 15),
 
-            //ini bagian kolom
+            //gambar dari assets
+            ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: Image.asset(
+                "assets/images/global.jpg",
+                height: 200,
+                fit: BoxFit.cover,
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
             const Text(
-              "Column Vertical (↓)",
+              "Menampilkan Gambar Bundar (Circle Avatar)",
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 10),
-            Container(
-              padding: const EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.black26),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  _buildBox("A"),
-                  const SizedBox(height: 10),
-                  _buildBox("B"),
-                  const SizedBox(height: 10),
-                  _buildBox("C"),
-                ],
-              ),
+            const SizedBox(height: 15),
+
+            const CircleAvatar(
+              radius: 60,
+              backgroundImage: AssetImage("assets/images/loopy_lembur.jpg"),
             ),
           ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildBox(String label) {
-    return Container(
-      width: 60,
-      height: 60,
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-        color: Colors.blueAccent,
-        borderRadius: BorderRadius.circular(8),
-      ),
-      child: Text(
-        label,
-        style: const TextStyle(
-          color: Colors.white,
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
         ),
       ),
     );
