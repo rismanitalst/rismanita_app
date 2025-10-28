@@ -27,21 +27,16 @@ class MyHome extends StatelessWidget {
         title: const Text("Welcome to RismanitaApp"),
         backgroundColor: Colors.blueAccent,
       ),
-      body: Center(
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
         child: Container(
-          width: 200,
-          height: 200,
-          decoration: BoxDecoration(
-            color: Colors.blueAccent,
-            borderRadius: BorderRadius.circular(20),
-          ),
+          width: double.infinity,
+          height: 120,
+          color: Colors.blueAccent,
           child: const Center(
             child: Text(
-              "Container Example",
-              style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white),
+              "ini adalah padding widget",
+              style: TextStyle(color: Colors.white, fontSize: 18),
             ),
           ),
         ),
